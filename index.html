@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Projects</title>
+    <meta
+      name="description"
+      content="Explore a vast collection of frontend projects including calculators, clocks, games, animations, and more."
+    />
+    <meta
+      name="keywords"
+      content="frontend projects, web development, HTML, CSS, JavaScript, mini projects"
+    />
+    <meta name="author" content="Nizzy" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-[#0f172a] text-white font-poppins px-6 py-6"
+  >
+    <!-- Main Container -->
+    <div class="max-w-6xl mx-auto">
+      <!-- Header -->
+      <header class="text-center mb-8">
+        <h1 class="text-3xl font-semibold flex items-center justify-center">
+          <i
+            class="fa fa-book pr-3 text-[#0ea5e9]"
+            aria-hidden="true"
+            alt="Book icon"
+          ></i>
+          View Projects
+        </h1>
+      </header>
+
+      <!-- Links Section -->
+      <section>
+        <h2 class="text-xl font-semibold flex items-center py-4">
+          <i class="fa fa-link text-[#0ea5e9] pr-2" alt="Link icon"></i>
+          Links
+        </h2>
+      </section>
+
+      <!-- Table Section -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse bg-[#1e293b] rounded-lg overflow-hidden">
+          <thead class="bg-[#334155] text-sm uppercase">
+            <tr>
+              <th class="px-4 py-3 border-b border-[#475569]">Title</th>
+              <th class="px-4 py-3 border-b border-[#475569]">Link</th>
+            </tr>
+          </thead>
+          <tbody
+            id="projectTable"
+            class="text-sm divide-y divide-[#475569]"
+          >
+            <!-- JavaScript will populate this -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- JavaScript to Load Projects -->
+    <script>
+      // List of projects (directories as per provided structure)
+      const projects = [
+        "advance_calculator",
+        "age_caculator",
+        "analog_clock",
+        "blurry_image_load",
+        "bmi_calculator",
+        "character_words_counter",
+        "color_generator",
+        "colorful_hovereffect",
+        "cool_split_animation",
+        "countdown_timer",
+        "dark_mode_toggle",
+        "digitalclock",
+        "drag_and_drop",
+        "drawing_whiteboad_canvas",
+        "expanding_faq",
+        "expanding_search",
+        "feedback_toggle",
+        "form_validation",
+        "good_cheap_fast",
+        "image_ripple_effect",
+        "images_expanding_cards",
+        "imageSlideshow",
+        "increasing_follower_countdown",
+        "infinite_loader",
+        "mini_calendar",
+        "mouse_position_event",
+        "mouse_trail",
+        "movie_landing_page",
+        "multiplication_app",
+        "music_player",
+        "note_taking",
+        "otp_verification_screen",
+        "progress_bar_steps",
+        "progress_step_bar",
+        "project_showcase",
+        "quiz_next_effect",
+        "random_choice_selector",
+        "random_image_generator",
+        "random_password_generator",
+        "random_quotes",
+        "responsive_navbar",
+        "ripple_effect",
+        "rock_paper_scissor",
+        "roll_dice",
+        "scroll_animation",
+        "simon_game",
+        "slide_navbar",
+        "slider_gallery",
+        "stop_watch",
+        "temperature_converter",
+        "testimonial_timer",
+        "text_wavy_animation",
+        "tik_tac_toe",
+        "todo_localstorage",
+        "Todoapp",
+        "user_filer_feature",
+        "valentine_fun_project",
+        "watery_text_effect",
+        "weather_app",
+        "weight_converter",
+      ];
+
+      // Dynamically populate table
+      const projectTable = document.getElementById("projectTable");
+      projects.forEach((project) => {
+        const projectName = project
+          .replace(/_/g, " ") // Replace underscores with spaces
+          .replace(/(^\w)/, (match) => match.toUpperCase()); // Capitalize first letter
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td class="px-4 py-3">${projectName}</td>
+          <td class="px-4 py-3">
+            <a
+              href="/${project}/index.html"
+              class="hover:underline hover:text-[#38bdf8]"
+              title="Visit ${projectName}"
+              target="_blank"
+              >Link</a>
+          </td>
+        `;
+        projectTable.appendChild(row);
+      });
+    </script>
+  </body>
+</html>
